@@ -1,6 +1,6 @@
 # Bug
 # DEMO https://bugtrackernavdeep.web.app/
-
+# IN PROGRESS STILL
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 In this project I built a bug tracker CRUD app that connects to realtime firebase database using bootstrap and ngbootstrap.
 ## Development server
