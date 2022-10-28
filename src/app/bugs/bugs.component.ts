@@ -25,7 +25,7 @@ export class BugsComponent implements OnInit, OnDestroy {
     this.subscription = this.serv.getData().subscribe(data=>{
       if (data){
       this.bugList = Object.keys(data).map(key=>({type:key, value: data[key]}));}
-    })
+    });
   }
 
   addBug() {

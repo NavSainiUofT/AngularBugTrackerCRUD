@@ -1,9 +1,9 @@
-<button (click)="addBug()">Add bug</button>
+<button class="btn btn-primary" (click)="addBug()">Add bug</button>
 
 
   <div class="panel-group">
 
-        <h1 >BUGLIST</h1>
+        <h1 >BUGS</h1>
 
         <ngb-accordion #acc="ngbAccordion">
             <ngb-panel *ngFor="let bug of bugList"
