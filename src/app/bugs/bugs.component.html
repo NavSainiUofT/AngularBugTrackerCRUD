@@ -1,10 +1,24 @@
-<div *ngFor="let bug of bugList">
-
-    <h3 >{{bug.value.name}}</h3>
-    <button (click)="editBug(bug.type)">Edit</button>
-    <button (click)="deleteBug(bug.type)">Delete</button>
-</div>
-
-
 <button (click)="addBug()">Add bug</button>
 
+
+  <div class="panel-group">
+
+        <h1 >BUGLIST</h1>
+
+        <ngb-accordion #acc="ngbAccordion">
+            <ngb-panel *ngFor="let bug of bugList"
+            [id]="bug.value" title={{bug.value.name}}>
+
+                <ng-template ngbPanelContent>
+                   
+                    <span style="text-align: justify">
+                        <h3>{{bug.value.desc}}</h3>
+                    </span>
+                    <span class="badge badge-primary">
+                        <button class="btn btn-primary" (click)="editBug(bug.type)">Edit</button>
+                        <button class="btn btn-primary" (click)="deleteBug(bug.type)">Delete</button>
+                    </span>&nbsp;
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+</div>

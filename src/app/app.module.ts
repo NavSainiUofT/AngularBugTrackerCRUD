@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BugsComponent } from './bugs/bugs.component';
 import { ContactComponent } from './contact/contact.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ContactComponent } from './contact/contact.component';
     AppComponent,
     HomeComponent,
     BugsComponent,
-    ContactComponent
+    ContactComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

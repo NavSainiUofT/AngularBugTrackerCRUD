@@ -23,12 +23,13 @@ export class BugsComponent implements OnInit, OnDestroy {
   }
   getData(){
     this.subscription = this.serv.getData().subscribe(data=>{
-      this.bugList = Object.keys(data).map(key=>({type:key, value: data[key]}));
+      if (data){
+      this.bugList = Object.keys(data).map(key=>({type:key, value: data[key]}));}
     })
   }
 
   addBug() {
-    const bug ={completion:"Halfway",name:"Bug 2",priority:"Low"}
+    const bug ={completion:"Halfway",name:"Bug 2",priority:"Low",desc:"this is my description before editing my bug"}
     this.serv.postData(bug);
     this.getData();
     this.change = "added";
@@ -36,7 +37,7 @@ export class BugsComponent implements OnInit, OnDestroy {
   }
 
   editBug(bug_id:string){
-    const bug ={completion:"Not Started",name:"EDITED 2 BUG",priority:"Low"}
+    const bug ={completion:"Not Started",name:"EDITED 2 BUG",priority:"Low",desc:"this is my description AFTER editing my bug"}
     this.serv.editData(bug,bug_id);
     this.getData();
     this.change = "edited";
